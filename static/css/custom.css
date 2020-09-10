@@ -1,0 +1,11 @@
+/* Custom CSS */
+
+@font-face {
+  font-family: "Noto Sans", sans-serif;
+}
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+blockquote {
+  font-size: 1em;
+}

@@ -1,0 +1,13 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  tags: ["docker"]
+  image: gitlab.version.fz-juelich.de:5555/orgpaket/ci/website:latest
+  only:
+    - main
+  script:
+    - hugo -d public
+  artifacts:
+    paths:
+    - public

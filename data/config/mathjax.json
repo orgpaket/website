@@ -1,0 +1,23 @@
+{
+  "library": {
+    "path": "//unpkg.com/mathjax@2.7.5/MathJax.js",
+    "config": "TeX-AMS-MML_HTMLorMML"
+  },
+  "config": {
+		"extensions":
+		["tex2jax.js","TeX/noErrors.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+		"jax": ["input/TeX", "output/HTML-CSS"],
+		"TeX": { "equationNumbers": { "autoNumber": "AMS" } },
+    "processEscapes": true,
+    "processEnvironments": true,
+		"tex2jax": {
+			"inlineMath": [ ["$","$"], ["\\(","\\)"] ],
+			"displayMath": [ ["$$","$$"], ["\\[","\\]"] ]
+		},
+		"HTML-CSS": {
+			"availableFonts": ["TeX"],
+			"scale": 100
+		}
+
+  }
+}

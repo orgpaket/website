@@ -1,0 +1,22 @@
+<div class='copyright'>
+  <p>
+  {{- with .Site.Copyright -}}
+    {{ . }}
+  {{- else -}}
+    {{- with .Site.Params.copyright -}}
+
+      {{- with .startyear -}}
+        {{- if lt ( int . ) now.Year -}}
+          {{- $.Scratch.Set "copyrightStartYear" . -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{ .prefix | markdownify }} &copy; {{ with ( $.Scratch.Get "copyrightStartYear" ) }}{{ . }}-{{ end }}{{ now.Year }} {{ or .holder $.Site.Title | markdownify }} {{ .suffix | markdownify }}
+    {{- end -}}
+  {{- end -}}
+  | Licensed under
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+      | Last Updated: {{ now.Format "Jan 2, 2006" }}
+
+  </p>
+</div>
